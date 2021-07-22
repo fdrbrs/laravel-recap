@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
+
+    <div class="d-flex justify-content-between">
+        <h1>All Posts</h1>
+        <div><a href="{{route('admin.posts.create')}}" class="btn btn-primary"></a> Add Post</div>
+    </div>
     <table class="table table-striped table-inverse">
         <thead class="thead-inverse">
             <tr>
@@ -25,9 +30,14 @@
                         <a href="{{route('admin.posts.edit', $post->id ) }}" class="btn btn-secondary">
                             <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
                         </a>
-                        <a href="" class="btn btn-danger">
+                        <!-- <a href="" class="btn btn-danger">
                             <i class="fas fa-trash fa-sm fa-fw"></i>
-                        </a>
+                        </a> -->
+                        <form action="{{route('admin.posts.destroy' $post->id)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash fa-sm fa-fw"></i></button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
