@@ -91,6 +91,10 @@ php artisan migrate
 ```bash
 git add . 
 git commit -m"Install laravel ui and compile assets"
+
+oppure
+
+git commit -am"Install laravel ui and compile assets"
 ```
 
 ## [FASE 2] Riorganizziamo la pagina del backoffice
