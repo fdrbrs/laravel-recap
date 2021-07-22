@@ -18,6 +18,9 @@ Facciamo un commit iniziale della repo con il Framework appena installato
 git init
 git add .
 git commit -m"Initial Commit"
+git branch -M main
+git remote add origin https://github.com/fdrbrs/<nome-repo>.git
+git push -u origin main
 ```
 
 ### Avviamo il server di Laravel
@@ -49,7 +52,7 @@ Ora lo scaffolding di autenticazione é istallato e possiamo registrare un utent
 eseguire il comando mysql per accedere alla riga di comando SQL
 
 ```bash
-mysql -uroot -p
+mysql -uroot -proot
 ```
 
 Per utenti windows la password é root mentre per mac é vuota (quindi premi enter).
